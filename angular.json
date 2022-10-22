@@ -107,5 +107,7 @@
       }
     }
   },
-  "defaultProject": "english-cards-front"
+  "cli": {
+    "analytics": false
+  }
 }
