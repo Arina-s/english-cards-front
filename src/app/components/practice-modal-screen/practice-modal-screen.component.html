@@ -1,5 +1,13 @@
-<div class="chose-setting-container">
+<div class="choose-setting-container">
     <h2>Chose settings</h2>
     <button class="close-button" (click)="closeDialog()">&#10006;</button>
     <div class="line"></div>
+    <form #settingsForm="ngForm">
+        <div class="count-cards-container">
+            <label for="count-cards">Count cards:</label>
+            <input ngModel name="countCards" type="number" class="form-control" id="countCards" required />
+            <div class="total">Total: {{totalCards}}</div>
+        </div>
+        <button type="submit" class="start-button" (click)="startPractice(settingsForm)">Start</button>
+    </form>
 </div>
