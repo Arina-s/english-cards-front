@@ -1,1 +1,14 @@
-<p>Practice {{cardFilter.countCards}}</p>
+<div *ngIf="isQuestion" class="question card">
+    <p class="main-world">{{currentCard.translate}}</p>
+    <p class="sentence">{{currentCard.sentenceTranslate}}</p>
+</div>
+<div *ngIf="!isQuestion" class="answer card">
+    <p class="main-world">{{currentCard.phrase}}</p>
+    <p class="sentence">{{currentCard.sentence}}</p>
+</div>
+<div class="button-panel">
+    <button [disabled]="index == 0" class="arrow-button" (click)="previousCard()">&#5176;</button>
+    <button class="flip-button" (click)="flipCard()">Flip</button>
+    <button [disabled]="index + 1 == currentCardsForPractice.length" class="arrow-button" (click)="nextCard()">&#5171;</button>
+</div>
+<button *ngIf="isFinish" class="go-munu-button" (click)="goMainMenu()">Go to the main menu</button>

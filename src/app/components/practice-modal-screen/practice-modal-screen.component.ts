@@ -1,12 +1,10 @@
-import { JsonPipe } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Card } from 'src/app/interfaces/card';
-import { CardFilter } from 'src/app/interfaces/card-filter';
 import { CardService } from 'src/app/services/card.service';
-import { FilterDataService } from 'src/app/services/filter-data.service';
+import { PracticeTaskService } from 'src/app/services/practice-task.service';
 
 @Component({
   selector: 'app-practice-modal-screen',
@@ -17,10 +15,13 @@ export class PracticeModalScreenComponent implements OnInit {
 
   public cards: Card[] = [];
   public totalCards: number = 0;
+  public defaultCardsNumber: number = 10;
+  public checked = "startWithNewest";
+  public defaultSort = "startWithNewest";
 
   constructor(private dialogRef: MatDialogRef<PracticeModalScreenComponent>, 
     private cardService: CardService, 
-    private filterDataService: FilterDataService) { }
+    private practiceTaskService: PracticeTaskService) { }
 
   ngOnInit(): void {
     this.getCars();
@@ -38,9 +39,10 @@ export class PracticeModalScreenComponent implements OnInit {
     );
   }
 
-  startPractice(addForm: NgForm) {
-    localStorage.setItem('currentFilter', JSON.stringify(addForm.value));
-    this.filterDataService.setCardFilter(addForm.value);
+  startPractice(settingsForm: NgForm) {
+    this.practiceTaskService.createTask(settingsForm.value);
+    this.dialogRef.close();
+    window.location.href = "/practice";
   }
 
   closeDialog(): void {

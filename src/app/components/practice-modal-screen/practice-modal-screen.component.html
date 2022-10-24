@@ -3,10 +3,22 @@
     <button class="close-button" (click)="closeDialog()">&#10006;</button>
     <div class="line"></div>
     <form #settingsForm="ngForm">
-        <div class="count-cards-container">
-            <label for="count-cards">Count cards:</label>
-            <input ngModel name="countCards" type="number" class="form-control" id="countCards" required />
+        <div class="count-cards-container text-container">
+            <label for="numberOfCards">Number of cards</label>
+            <input [(ngModel)]="defaultCardsNumber" name="numberOfCards" type="number" class="form-control" id="numberOfCards" required/>
             <div class="total">Total: {{totalCards}}</div>
+        </div>
+        <div class="start-cards-container radio-container">
+            <input [(ngModel)]="defaultSort"name="startWith" id="startWithNewest" type="radio" class="form-control" value="startWithNewest"/>
+            <label for="startWithNewest">Start with the newest</label>
+        </div>
+        <div class="start-cards-container radio-container">
+            <input [(ngModel)]="defaultSort" name="startWith" id="startWithOldest" type="radio" class="form-control" value="startWithOldest"/>
+            <label for="startWithOldest">Start with the oldest</label>
+        </div>
+        <div class="start-cards-container radio-container">
+            <input [(ngModel)]="defaultSort" name="startWith" id="random" type="radio" class="form-control" value="random"/>
+            <label for="random">Random</label>
         </div>
         <button type="submit" class="start-button" (click)="startPractice(settingsForm)">Start</button>
     </form>

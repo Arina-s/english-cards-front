@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&display=swap');
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 html, body {
     margin: 0;
@@ -14,9 +15,11 @@ body {
 }
 
 :root {
-    --color-primary-dark: #31356e;
+    --color-primary-dark: #222661;
+    --color-primary-dark-2: #060a3f;
     --color-primary-light: #ffffff;
     --color-primary-medium: #e6e6e6;
     --color-primary-blue: #c9e0ff;
     --color-primary-blue-2: #b2cdf0;
+    --color-primary-yellow: #ffdd00;
 }
