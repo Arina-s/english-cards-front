@@ -13,11 +13,15 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { PracticeModalScreenComponent } from './components/practice-modal-screen/practice-modal-screen.component';
 import { PracticeModeComponent } from './components/practice-mode/practice-mode.component';
+import { CardGroupAreaComponent } from './components/card-group-area/card-group-area.component';
+import { CardSubgroupAreaComponent } from './components/card-subgroup-area/card-subgroup-area.component';
 
 const routes: Routes = [
   { path: '', component: MainMenuComponent },
   { path: 'cards', component: CardAreaComponent},
   { path: 'practice', component: PracticeModeComponent},
+  { path: 'card-groups', component: CardGroupAreaComponent},
+  { path: 'card-subgroups', component: CardSubgroupAreaComponent}
 ];
 
 @NgModule({
@@ -28,7 +32,9 @@ const routes: Routes = [
     CardComponent,
     MainMenuComponent,
     PracticeModalScreenComponent,
-    PracticeModeComponent
+    PracticeModeComponent,
+    CardGroupAreaComponent,
+    CardSubgroupAreaComponent
   ],
   imports: [
     CommonModule,

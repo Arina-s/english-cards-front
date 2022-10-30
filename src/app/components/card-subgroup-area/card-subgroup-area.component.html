@@ -1,0 +1,7 @@
+<button class="back-button" (click)="openGroups()">&#11013;</button>
+<p class="title">Subgroups</p>
+<div class="card-group-container">
+    <div *ngFor="let cardSubgroupName of cardSubgroupNames">
+        <button class="card-group">{{cardSubgroupName}}</button>
+    </div>
+</div>

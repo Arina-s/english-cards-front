@@ -18,4 +18,8 @@ export class MainMenuComponent implements OnInit {
     this.dialog.open(PracticeModalScreenComponent);
   }
 
+  openLink(url: string) {
+    window.location.href = url;
+  }
+
 }
