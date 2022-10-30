@@ -15,6 +15,7 @@ import { PracticeModalScreenComponent } from './components/practice-modal-screen
 import { PracticeModeComponent } from './components/practice-mode/practice-mode.component';
 import { CardGroupAreaComponent } from './components/card-group-area/card-group-area.component';
 import { CardSubgroupAreaComponent } from './components/card-subgroup-area/card-subgroup-area.component';
+import { CreateGroupModalScreenComponent } from './components/create-group-modal-screen/create-group-modal-screen.component';
 
 const routes: Routes = [
   { path: '', component: MainMenuComponent },
@@ -34,7 +35,8 @@ const routes: Routes = [
     PracticeModalScreenComponent,
     PracticeModeComponent,
     CardGroupAreaComponent,
-    CardSubgroupAreaComponent
+    CardSubgroupAreaComponent,
+    CreateGroupModalScreenComponent
   ],
   imports: [
     CommonModule,

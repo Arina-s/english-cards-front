@@ -3,32 +3,6 @@
     height: 180px;
 }
 
-h2 {
-    display: inline;
-    margin-left: 10px;
-    color: var(--color-primary-dark);
-}
-
-.close-button {
-    margin-left: 190px;
-    margin-top: -4px;
-    background-color: white;
-    font-size: 24px;
-    color: var(--color-primary-blue);
-    border: none;
-}
-
-.close-button:hover {
-    color: var(--color-primary-blue-2);
-}
-
-.line {
-    width: 384px;
-    height: 1px;
-    margin: 16px auto;
-    background-color: var(--color-primary-medium);
-}
-
 form {
     color: var(--color-primary-dark-2);
     font-size: 18px;

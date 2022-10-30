@@ -1,0 +1,10 @@
+<div class="create-group-container">
+    <h2 class="title-modal-screen">Create card group</h2>
+    <button class="close-button" (click)="closeDialog()">&#10006;</button>
+    <div class="line"></div>
+    <form #addCardGroupForm="ngForm">
+        <label for="name">Card group name</label>
+        <input ngModel name="name" type="text" class="group-name" id="name" autocomplete="off" required/>
+        <button type="submit" class="add-button" (click)="addCardGroup(addCardGroupForm)">Add</button>
+    </form>
+</div>
