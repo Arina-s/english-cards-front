@@ -17,6 +17,10 @@ export class CardGroupService {
     return this.http.get<string[]>(`${this.apiServerUrl}/cardGroups/cardSubgroupNames/${cardGroupName}`);
   }
 
+  public deleteCardGroup(cardGroupName: string): void {
+    this.http.delete<string[]>(`${this.apiServerUrl}/cardGroups/${cardGroupName}`).subscribe();
+  }
+
   public createCardGroup(name: string): void {
     this.http.post<string>(`${this.apiServerUrl}/cardGroups/?groupName=${name}`, null).subscribe();
   }

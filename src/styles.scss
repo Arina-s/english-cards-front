@@ -18,7 +18,9 @@ body {
     --color-primary-dark: #222661;
     --color-primary-dark-2: #060a3f;
     --color-primary-purple: #8955a1;
+    --color-primary-purple-2: #9b75ac;
     --color-primary-light: #ffffff;
+    --color-primary-grey-dark: #47495d;
     --color-primary-medium: #e6e6e6;
     --color-primary-blue: #c9e0ff;
     --color-primary-blue-2: #b2cdf0;
@@ -57,15 +59,15 @@ body {
 .card-group-container {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 auto;
+    margin: 0 auto 60px;
     width: 80%;
     box-sizing: border-box;
 }
 
 .card-group {
     margin: 30px 20px -10px;
-    width: 200px;
-    height: 100px;
+    width: 258px;
+    height: 130px;
     border-radius: 12px;
     background-color: var(--color-primary-purple);
     box-shadow: #5E5DF0 0 5px 10px -5px;

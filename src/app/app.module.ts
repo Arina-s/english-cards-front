@@ -16,6 +16,8 @@ import { PracticeModeComponent } from './components/practice-mode/practice-mode.
 import { CardGroupAreaComponent } from './components/card-group-area/card-group-area.component';
 import { CardSubgroupAreaComponent } from './components/card-subgroup-area/card-subgroup-area.component';
 import { CreateGroupModalScreenComponent } from './components/create-group-modal-screen/create-group-modal-screen.component';
+import { DeleteGroupModalScreenComponent } from './components/delete-group-modal-screen/delete-group-modal-screen.component';
+import { EditGroupModalScreenComponent } from './components/edit-group-modal-screen/edit-group-modal-screen.component';
 
 const routes: Routes = [
   { path: '', component: MainMenuComponent },
@@ -36,7 +38,9 @@ const routes: Routes = [
     PracticeModeComponent,
     CardGroupAreaComponent,
     CardSubgroupAreaComponent,
-    CreateGroupModalScreenComponent
+    CreateGroupModalScreenComponent,
+    DeleteGroupModalScreenComponent,
+    EditGroupModalScreenComponent
   ],
   imports: [
     CommonModule,

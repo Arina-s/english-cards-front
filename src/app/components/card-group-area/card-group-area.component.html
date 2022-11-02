@@ -1,8 +1,19 @@
 <button class="back-button" (click)="openMainMenu()">&#11013;</button>
 <p class="title">Card Groups</p>
 <button class="add-card-group" (click)="openCreateModel()">Add Group</button>
+<div class="edit-mode-container">
+    <p class="toggle-title">Edit mode</p>
+    <div class="toggle">
+        <input [(ngModel)]="isToggleChecked" type="checkbox" id="switch"/><label for="switch">Toggle</label>
+    </div>
+</div>
 <div class="card-group-container">
     <div *ngFor="let cardGroupName of cardGroupNames">
-        <button class="card-group" (click)="openSubgroup(cardGroupName)">{{cardGroupName}}</button>
+        <button [ngClass]="isToggleChecked ? 'card-group card-groups-not-active': 'card-group'" (click)="openSubgroup(cardGroupName)">{{cardGroupName}}
+            <div class="group-buttons">
+                <span *ngIf="isToggleChecked" (click)="openEditModal(cardGroupName)" class="fas fa-edit toggle-img"></span>
+                <span *ngIf="isToggleChecked" (click)="openDeleteModal(cardGroupName)" class="fas fa-trash-alt toggle-img"></span>
+            </div>
+        </button>
     </div>
 </div>

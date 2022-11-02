@@ -1,0 +1,8 @@
+<div class="delete-group-container">
+    <h2 class="title-modal-screen">Delete card group</h2>
+    <button class="close-button" (click)="closeDialog()">&#10006;</button>
+    <div class="line"></div>
+    <p>Are you sure you want to delete card group "{{name}}"?</p>
+    <button (click)="deleteGroup()">Yes</button>
+    <button (click)="closeDialog()">No</button>
+</div>

@@ -1,0 +1,97 @@
+.edit-mode-container {
+    //display: inline-block;
+    float: right;
+    margin-right: 200px;
+    margin-top: -20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-primary-grey-dark);
+    padding-top: 0;
+}
+
+.toggle-title {
+    display: inline-block;
+}
+
+.toggle {
+    display: inline;
+    vertical-align: super;
+}
+
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.card-groups-not-active {
+    background-color: var(--color-primary-purple-2);
+}
+
+.card-groups-not-active:hover {
+    background-color: var(--color-primary-purple-2);
+    transform: none;
+}
+  
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 60px;
+    height: 34px;
+    background: grey;
+    display: inline-block;
+    border-radius: 20px;
+    position: relative;
+}
+  
+label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+  
+input:checked + label {
+    background: #8cda55;
+}
+  
+input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+  
+label:active:after {
+    width: 20px;
+}
+
+.group-buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 190px;
+}
+
+.toggle-img {
+    display: inline-block;
+    vertical-align: middle;
+    // height: 28px;
+    // width: 28px;
+    margin-right: 4px;
+}
+
+// .fa-edit {
+//     color: #e9b635;
+// }
+
+.fa-edit:hover {
+    color: #e9b635;
+}
+
+.fa-trash-alt:hover {
+    color: #e22626;
+}
+  

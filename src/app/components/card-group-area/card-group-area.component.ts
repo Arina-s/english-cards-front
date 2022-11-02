@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CardGroup } from 'src/app/interfaces/card-group';
 import { CardGroupService } from 'src/app/services/card-group.service';
 import { CreateGroupModalScreenComponent } from '../create-group-modal-screen/create-group-modal-screen.component';
+import { DeleteGroupModalScreenComponent } from '../delete-group-modal-screen/delete-group-modal-screen.component';
+import { EditGroupModalScreenComponent } from '../edit-group-modal-screen/edit-group-modal-screen.component';
 
 @Component({
   selector: 'app-card-group-area',
@@ -10,6 +12,8 @@ import { CreateGroupModalScreenComponent } from '../create-group-modal-screen/cr
   styleUrls: ['./card-group-area.component.scss']
 })
 export class CardGroupAreaComponent implements OnInit {
+
+  isToggleChecked: boolean = false;
 
   cardGroupNames: string[] = [];
 
@@ -21,8 +25,10 @@ export class CardGroupAreaComponent implements OnInit {
   }
 
   openSubgroup(cardGroup: string) {
-    localStorage.setItem("cardGroup", cardGroup);
-    window.location.href="/card-subgroups";
+    if (!this.isToggleChecked) {
+      localStorage.setItem("cardGroup", cardGroup);
+      window.location.href="/card-subgroups";
+    }
   }
 
   openMainMenu() {
@@ -31,6 +37,18 @@ export class CardGroupAreaComponent implements OnInit {
 
   openCreateModel() {
     this.dialog.open(CreateGroupModalScreenComponent);
+  }
+
+  openEditModal(cardGroupName: string) {
+    this.dialog.open(EditGroupModalScreenComponent);
+  }
+
+  openDeleteModal(cardGroupName: string) {
+    this.dialog.open(DeleteGroupModalScreenComponent, {
+      data: {
+        cardGroupName: cardGroupName
+      }
+    });
   }
 
 }
